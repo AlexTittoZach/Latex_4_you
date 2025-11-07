@@ -1,0 +1,29 @@
+# Temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Build artifacts
+*.pdf
+build/
+_minted-*/
+
+# Editor/IDE files
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db

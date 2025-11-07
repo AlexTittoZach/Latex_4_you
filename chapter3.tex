@@ -1,0 +1,67 @@
+\chapter{Theoretical Aspects}
+
+Driver drowsiness detection using computer vision moves beyond traditional physiological monitoring, emphasizing the analysis of observable \emph{behavioral manifestations} such as eye closure and yawning. This chapter summarizes the core mathematical foundations, algorithmic architectures, and model evaluation strategies relevant to modern facial landmark-based drowsiness systems.
+
+\section{Foundations}
+
+Early systems relied on EEG, EOG, and ECG signals for clinical-grade detection, but these methods demanded intrusive hardware. Modern behavioral approaches focus on face and landmark tracking to capture fatigue through non-invasive means, delivering advantages in user comfort, cost, and real-time processing.
+
+Mathematically, behavioral systems extract features like Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) to serve as reliable proxies for physiological measures:
+\[
+    \text{EAR} = \frac{\|p_2 - p_6\| + \|p_3 - p_5\|}{2 \|p_1 - p_4\|}
+\]
+\[
+    \text{MAR} = \frac{\|p_{51} - p_{59}\| + \|p_{52} - p_{58}\| + \|p_{53} - p_{57}\|}{2 \|p_{49} - p_{55}\|}
+\]
+where \(p_i\) are facial landmark coordinates. These ratios decrease below characteristic thresholds during prolonged eye closure (EAR) and increase during yawning (MAR).
+
+\section{Facial Landmark Detection and Processing}
+
+Detection begins with Haar Cascade classifiers, which efficiently locate facial regions in each frame. Dlib’s 68-point landmark regression further refines the localization of key features, making geometric computation feasible. Preprocessing operations—grayscale conversion and histogram equalization—normalize pixel values for robustness under variable lighting.
+
+For stable classification, temporal filtering such as moving averages or exponential smoothing is applied:
+\[
+    \text{EAR}_{\text{smooth}}(t) = \frac{1}{N} \sum_{k=0}^{N-1} \text{EAR}(t-k)
+\]
+Threshold logic detects drowsiness when EAR remains below a user-calibrated threshold for multiple frames:
+\[
+    \text{Drowsy}_{\text{eye}} = 
+    \begin{cases}
+    1, & \text{if } \text{EAR}(t) < \tau_{\text{EAR}} \text{ for duration } T \\
+    0, & \text{otherwise}
+    \end{cases}
+\]
+Similar logic applies for yawn detection via MAR.
+
+\section{Machine Learning Classification}
+
+Beyond rule-based thresholds, machine learning models—especially Support Vector Machines (SVMs)—can combine EAR, MAR, blink/yawn frequency, and other features into multidimensional vectors:
+\[
+    \mathbf{x} = [\text{EAR}_{\text{left}}, \text{EAR}_{\text{right}}, \text{MAR}, f_{\text{blink}}, f_{\text{yawn}}, \ldots]^T
+\]
+SVMs are trained to separate alert and drowsy states via hyperplane optimization, with kernel methods enabling non-linear decision boundaries for improved accuracy.
+
+\section{Evaluation Metrics}
+
+Performance is measured by:
+\newpage
+\[
+    \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+\]
+\[
+    \text{Recall} = \frac{TP}{TP + FN}
+\]
+\[
+    \Delta t = t_\text{alert} - t_\text{onset}
+\]
+where TP, TN, FP, FN denote true/false positive/negatives and \(\Delta t\) quantifies detection latency.
+
+Real-world viability hinges on achieving high accuracy and low latency in diverse conditions. Safety demands sensitive recall (few missed alerts), while alert fatigue is minimized via precision tuning.
+
+\section{Practical and Computational Considerations}
+
+Camera-based behavioral systems are computationally efficient: Haar Cascade and landmark regression enable real-time (15–30 fps) operation even on embedded devices. Personalized calibration further refines threshold logic for individual differences, typically conducted during system setup.
+
+\section{Conclusion}
+
+Modern drowsiness detection systems combine computer vision, mathematical feature extraction, and machine learning within an optimized pipeline. They deliver practical, scalable, and non-invasive safety enhancements for diverse transportation environments, outperforming invasive clinical approaches while balancing accuracy, flexibility, and user comfort.

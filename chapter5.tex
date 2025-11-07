@@ -1,0 +1,52 @@
+\chapter{Limitations and Future Scope}
+
+While the implementation and evaluation of computer vision-based driver drowsiness detection systems showcase substantial progress, several limitations merit critical acknowledgement. A clear understanding of these aspects is essential for steering future research and ensuring practical system deployment.
+
+\section{Limitations}
+
+Despite outstanding accuracy and flexibility, existing drowsiness detection approaches face key limitations:
+
+\begin{itemize}
+    \item \textbf{Environmental Sensitivity:}  
+    Detection accuracy can degrade under poor lighting, extreme facial occlusions, or rapid head movements, which can obscure landmarks and increase false positives or negatives.
+
+    \item \textbf{Individual Variability:}  
+    Fixed EAR and MAR thresholds may not generalize to all users due to differences in facial geometry, eye shape, and blinking/yawning patterns, limiting system personalization.
+
+    \item \textbf{Limited Temporal Prediction:}  
+    Most current systems react to immediate drowsiness symptoms. Predicting gradual fatigue or modeling individual circadian rhythms remains challenging.
+
+    \item \textbf{Privacy Concerns:}  
+    Continuous video monitoring raises privacy issues; drivers may feel discomfort or concern over potential misuse of captured footage.
+
+    \item \textbf{Resource Constraints:}  
+    Real-time landmark detection and machine learning inference may strain computational resources on embedded or low-cost hardware, affecting deployment feasibility in edge settings.
+    
+    \item \textbf{Integration Challenges:}  
+    Seamless interfacing with diverse vehicle models and intelligent alert mechanisms can require significant engineering effort and standardization.
+\end{itemize}
+
+\section{Future Scope}
+
+Promising avenues for advancing drowsiness detection technology include:
+
+\begin{itemize}
+    \item \textbf{Multimodal Fusion:}  
+    Combining facial analysis with physiological sensors, audio cues, and steering behavior offers robust, redundant safety monitoring, especially in challenging environments.
+    
+    \item \textbf{Personalized Calibration:}  
+    Adaptive models leveraging short calibration routines can fine-tune thresholds and detection logic to each driver, reducing false alarms and enhancing system trust.
+    
+    \item \textbf{Privacy Protection:}  
+    Integrating local processing, anonymization techniques, and federated learning minimizes privacy risks and builds user confidence.
+    
+    \item \textbf{Edge Optimization:}  
+    Streamlined algorithms and hardware acceleration (e.g., ARM NEON, GPU, or NPU support) can improve real-time performance on embedded platforms.
+    
+    \item \textbf{Context-Aware Prediction:}  
+    Systems can integrate trip context, time-of-day, and historical fatigue data for predictive, preventive alerts rather than reactive alarms.
+    
+    \item \textbf{Scalable Standardization:}  
+    Collaborative development of standardized APIs, datasets, and performance metrics enables fair benchmarking and broad deployment across vehicle fleets and markets.
+\end{itemize}
+

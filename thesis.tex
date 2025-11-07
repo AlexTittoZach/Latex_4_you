@@ -1,0 +1,65 @@
+\documentclass{dmathesis}
+
+\usepackage{array}
+\usepackage{caption}
+\captionsetup[table]{position=bottom}
+\usepackage{fancyhdr}
+
+\input{format}
+
+% ======== Fancy headers & footers ========
+\fancypagestyle{mystyle}{
+    \fancyhf{}
+    \fancyhead[L]{\nouppercase{\small\bfseries\leftmark}} % Chapter title
+    \fancyhead[R]{\small\bfseries\thepage}                % Page number
+    \fancyfoot[C]{\textit{Department of Artificial Intelligence and Data Science, SJCET Palai}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{\nouppercase{\small\bfseries\leftmark}}
+    \fancyhead[R]{\small\bfseries\thepage}
+    \fancyfoot[C]{\textit{Department of Artificial Intelligence and Data Science, SJCET Palai}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\begin{document}
+
+%% Front matter
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{empty}
+\input{frontpage}
+
+%% Main text
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{mystyle}
+
+%% Chapters
+\include{chapter0}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}  % Chapter 6 (numbered)
+
+%% Conclusion (unnumbered)
+\cleardoublepage
+\markboth{Conclusion}{Conclusion}  % fixes header
+\include{conclusion}
+
+%% References (unnumbered)
+\cleardoublepage
+\markboth{References}{References}  % fixes header
+\include{ref}
+
+\end{document}

@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   This is frontpage.tex file needed for the dmathesis.cls file.  You   %
+%  have to  put this file in the same directory with your thesis files.  %
+%            
+% 
+%                 No Copyright for this file                             % 
+%                 Save your time and enjoy it                            % 
+%                                                                        % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%           The title page           %%%%%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+%\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+\fancypagestyle{plain}{%
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+\newpage
+
+\thispagestyle{empty}
+\begin{center}
+ 
+{\normalsize \bf SEMINAR REPORT}\\
+ON\\
+\vspace*{0.5 cm}
+{\huge \bf A Futuristic Approach to Driver Drowsiness Detection and Prevention Using OpenCV and HAAR Software}\\[3.5mm]
+
+\vspace{4 mm}
+
+   \vspace{0.5 cm}
+   \large Submitted by\\
+   { \bf Alex Titto Zacharias (SJC22AD014)}\\[-0.6mm]
+  {\large to\\[-0.6mm] the APJ Abdul Kalam Technological University\\[-0.6mm] in partial fulfillment of the requirements for the award of the degree\\[-0.6mm] of\\[-0.6mm] Bachelor of Technology\\[-0.6mm] in\\[-0.6mm] {\bf Artificial Intelligence and Data Science}}
+  %\vspace*{1cm}
+  
+  % Put your university logo here if you wish.
+   \begin{center}
+   \includegraphics[width=0.3\textwidth]{SJCET_logo.png}
+   \end{center}
+   \vspace*{-0.5cm}
+  {\LARGE {\bf Department of Artificial Intelligence and Data Science}}\\
+          [-3mm] {\large {\bf St. Joseph's College of Engineering and Technology, Palai}\\
+           [1mm] OCTOBER : 2025}
+
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%           The abstract page         %%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% The dedication page, of you have one  %%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{\numberline{}Certificate}
+\begin{center}
+\normalsize{ST. JOSEPH’S COLLEGE OF ENGINEERING AND TECHNOLOGY, PALAI}\\[0.5cm]
+\normalsize
+ { DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE}\\[1.0cm]% Put your university logo here if you wish.
+   \begin{center}
+   \includegraphics[width=0.3\textwidth]{SJCET_logo.png}
+   \end{center}
+{\large CERTIFICATE}\\[1.5cm]
+\end{center}
+\normalsize 
+This is to certify that the seminar report entitled {\textbf{A Futuristic Approach to Driver Drowsiness Detection and Prevention Using OpenCV and HAAR Software}} submitted by { \bf Alex Titto Zacharias (SJC22AD014)} to the APJ Abdul Kalam Technological University in partial fulfillment of the requirements for the award of the Degree of Bachelor of Technology in Artificial Intelligence and Data Science is a bonafide record of the seminar carried out under our guidance and supervision.\vspace{1.3 cm}\\
+{\bf Seminar Guide}\hspace{8.2 cm}{\bf Seminar Coordinator}\\
+Ms. Jabin Mathew\hspace{7.8cm} Mr. Jacob Thomas\\
+Assistant Professor\hspace{7.85 cm}Assistant Professor\hspace{2.6 cm}\\Department of AD\hspace{7.9 cm}Department of AD
+\vspace{1.3 cm}\\
+\begin{minipage}[t]{0.5\textwidth}
+\begin{flushleft}
+\setlength{\leftskip}{0pt} % Adjust the left margin
+\vspace{0.2 cm}
+Place: Choondacherry \\
+Date: 22-10-2025
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}[t]{0.49\textwidth}
+\begin{flushright}
+\begin{tabular}{l}
+\textbf{Head of Department} \\
+Dr. Renjith thomas\\
+Associate Professor \\
+Department of AD
+\end{tabular}
+\end{flushright}
+\end{minipage}
+                
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{\numberline{}Acknowledgement}
+\begin{center}
+  \vspace*{1cm}
+  \textbf{\large Acknowledgement}
+\end{center}
+I wish to record my indebtedness and thankfulness to all who helped me complete this seminar titled $"$A Futuristic Approach to Driver Drowsiness Detection and Prevention Using OpenCV and HAAR Software$"$. I would like to convey a special gratitude to Dr.~V.P. Devassia, Principal, SJCET, Palai, for the facilities. I express my sincere thankfulness to Dr. Renjith Thomas, Head of the department, Department of Artificial Intelligence \& Data Science for his cooperation and valuable suggestions. Also, I express my sincere thanks to the seminar coordinator Mr. Jacob Thomas for his helpful feedback and timely assistance.
+I am especially thankful to my guide, Ms. Jabin Mathew, Assistant Professor, Department of Artificial Intelligence \& Data Science for giving me valuable suggestions and critical inputs through guidance and support. I also extend my thanks to college lab technicians, my friends, and others who directly or indirectly helped me during this seminar work.
+ \\
+\begin{flushright}
+Alex Titto Zacharias \end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%           The abstract page         %%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+The escalating concern over road safety has intensified the need for practical and accurate driver monitoring systems, especially in resource-constrained and privacy-sensitive environments. Conventional drowsiness detection methods rely on physiological signals or vehicle behaviors, often resulting in intrusive setups and limited adaptability to diverse situations.
+
+Computer vision-based frameworks offer a promising alternative by analyzing facial features and behavioral cues to assess driver alertness. By leveraging robust techniques such as Haar cascade classifiers and facial landmark detection, systems extract critical metrics—such as Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR)—to intelligently infer fatigue, all while ensuring non-intrusive operation.
+
+Machine learning classifiers further enhance accuracy by modeling complex temporal and individual patterns. Evaluations demonstrate significant improvements in detection sensitivity and user comfort compared to traditional approaches, highlighting the system’s applicability to personal vehicles, commercial fleets, and emerging autonomous platforms.
+
+Overall, this vision-driven paradigm marks a shift from invasive bio-signals toward intelligent, adaptive, and context-aware safety solutions, setting the foundation for next-generation, scalable automotive safety systems.
+
+  % \vspace*{0.5cm}
+  
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%    tableofcontents, listoffigures and listoftables       %%%%%%%%%
+%%%%%%%%        Command if you do not have  them                  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\tableofcontents
+\printnomenclature
+
+\nomenclature{EAR}{Eye Aspect Ratio}
+\nomenclature{ECG}{Electrocardiogram}
+\nomenclature{EEG}{Electroencephalogram}
+\nomenclature{EOG}{Electrooculogram}
+\nomenclature{FPS}{Frames Per Second}
+\nomenclature{MAR}{Mouth Aspect Ratio}
+\nomenclature{ROI}{Region of Interest}
+\nomenclature{SVM}{Support Vector Machine}
+\nomenclature{RT}{Reaction Time}
+\nomenclature{RGB}{Red-Green-Blue (color model)}
+\nomenclature{KSS}{Karolinska Sleepiness Scale}
+\nomenclature{PVT}{Psychomotor Vigilance Task}
+\nomenclature{CLAHE}{Contrast Limited Adaptive Histogram Equalization}
+
+
+
+\listoffigures
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%   END OF FRONT PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

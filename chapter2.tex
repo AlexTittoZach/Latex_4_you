@@ -1,0 +1,19 @@
+\chapter{Literature Review}
+
+Research in driver drowsiness detection has progressed from early physiological signal-based methods to advanced computer vision and behavioral analytics. Classical techniques, including EEG and EOG monitoring, provided high accuracy but were often impractical due to the need for invasive equipment and limited scalability in real-world driving [1]. 
+
+Alternatives such as vehicle-based metrics and behavioral cues were introduced to augment safety, but often failed to provide timely warnings or robust results under varying driver conditions [2]. The transition to computer vision marked a paradigm shift, enabling non-intrusive monitoring via standard cameras and leveraging facial feature analysis for fatigue detection [3].
+
+Key developments include the use of Haar Cascade classifiers and facial landmark detection (notably dlib's 68-point model), which facilitated precise eye and mouth region localization [4]. Combined metrics such as Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) became central to quantifying fatigue indicators like prolonged eye closure and yawning [5].
+
+Machine learning models—including Support Vector Machines (SVMs) and lightweight neural networks—improved classification accuracy and personalized predictions by modeling multi-dimensional feature sets and temporal patterns [6]. These frameworks were further supported by expanding publicly available datasets such as iBUG-300W and NTHU-DDD, driving benchmarking and comparative evaluation [7].
+
+The literature emphasizes real-time processing as critical for deployment, with techniques such as region-of-interest tracking, frame skipping, and hardware acceleration enhancing performance on embedded systems [4]. Multi-modal alerting—encompassing audio, visual, and haptic signals—improves driver awareness and system effectiveness [8].
+
+Challenges remain, notably in robust detection under poor lighting, occlusions, and diverse driver demographics [3]. Privacy issues related to continuous video capture and data handling demand privacy-preserving methods, such as on-device processing and federated learning [9].
+
+Recent surveys confirm that vision-based approaches now offer the best blend of accuracy, cost-effectiveness, and user acceptance, outpacing physiological and vehicle-based alternatives [5]. Continuing innovation is geared towards hybrid sensor fusion, personalized calibration, and regulatory standardization.
+
+\section*{Summary}
+
+Overall, modern drowsiness detection leverages real-time vision technologies, intelligent analytics, and user-centric design. Key trends include the integration of behavioral cues, versatile machine learning models, and privacy-aware architectures, setting the stage for safer, context-aware transportation solutions in consumer and commercial vehicles.
